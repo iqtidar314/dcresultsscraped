@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DC Student Results</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Exam Result Viewer</title>
+    <link rel="stylesheet" href="style.css"> <!-- External CSS (optional for styling) -->
 </head>
 <body>
-    <h1>DC Student Results</h1>
-    
+    <h1>Exam Result Viewer</h1>
+
     <!-- Dropdown for Exam Level -->
     <label for="exam-level">Exam Level:</label>
     <select id="exam-level">
+        <option value="">Select Exam Level</option>
         <option value="HSC">HSC</option>
+        <!-- You can add more levels like SSC, A-Level, etc. -->
     </select>
 
-    <!-- Dropdown for Groups -->
-    <label for="groups">Groups:</label>
-    <select id="groups">
+    <!-- Dropdown for Group -->
+    <label for="group">Group:</label>
+    <select id="group">
+        <option value="">Select Group</option>
         <option value="Science">Science</option>
         <option value="Business Studies">Business Studies</option>
         <option value="Humanities">Humanities</option>
@@ -26,6 +29,7 @@
     <!-- Dropdown for Session -->
     <label for="session">Session:</label>
     <select id="session">
+        <option value="">Select Session</option>
         <option value="2023-2024">2023-2024</option>
         <option value="2024-2025">2024-2025</option>
         <option value="2025-2026">2025-2026</option>
@@ -41,17 +45,15 @@
     <label for="password">Password:</label>
     <input type="password" id="password" placeholder="Enter password" />
 
+    <!-- Submit Button -->
     <button id="submit-btn">Submit</button>
 
+    <!-- Container for displaying result -->
     <div id="result-container">
         <!-- The exam result will be displayed here -->
     </div>
 
-    <script src="script.js">
-    document.getElementById('exam-level').addEventListener('change', updateExamList);
-document.getElementById('group').addEventListener('change', updateExamList);
-document.getElementById('session').addEventListener('change', updateExamList);
-</script>
-
+    <!-- Link to your external JavaScript file -->
+    <script src="script.js"></script> <!-- External JS file -->
 </body>
 </html>
