@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DC Student Results</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>DC Student Results</h1>
+    
+    <!-- Dropdown for Exam Level -->
+    <label for="exam-level">Exam Level:</label>
+    <select id="exam-level">
+        <option value="HSC">HSC</option>
+    </select>
+
+    <!-- Dropdown for Groups -->
+    <label for="groups">Groups:</label>
+    <select id="groups">
+        <option value="Science">Science</option>
+        <option value="Business Studies">Business Studies</option>
+        <option value="Humanities">Humanities</option>
+    </select>
+
+    <!-- Dropdown for Session -->
+    <label for="session">Session:</label>
+    <select id="session">
+        <option value="2023-2024">2023-2024</option>
+        <option value="2024-2025">2024-2025</option>
+        <option value="2025-2026">2025-2026</option>
+    </select>
+
+    <!-- Dropdown for Exam List (Dynamically updated) -->
+    <label for="exam">Exam:</label>
+    <select id="exam">
+        <option value="">Select Exam</option>
+    </select>
+
+    <!-- Password Input -->
+    <label for="password">Password:</label>
+    <input type="password" id="password" placeholder="Enter password" />
+
+    <button id="submit-btn">Submit</button>
+
+    <div id="result-container">
+        <!-- The exam result will be displayed here -->
+    </div>
+
+    <script src="script.js">
+    document.getElementById('exam-level').addEventListener('change', updateExamList);
+document.getElementById('group').addEventListener('change', updateExamList);
+document.getElementById('session').addEventListener('change', updateExamList);
+</script>
+
+</body>
+</html>
