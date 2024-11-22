@@ -54,7 +54,7 @@ document.getElementById('submit-btn').addEventListener('click', function (e) {
     // Validate password and exam selection
     if (password === "dcstudent" && examName) {
         // Redirect to the result page corresponding to the selected exam
-        window.location.href = `result/${examName}.html`;
+        window.location.href = `results/${examName}.html`;
     } else {
         alert('Invalid password or exam selection. Please try again.');
     }
