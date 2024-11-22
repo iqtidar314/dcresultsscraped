@@ -1,100 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DC Result Scraped</title>
-  <style>
-    /* Add your existing CSS styling here */
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #2c3e50, #4ca1af);
-      color: white;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      max-width: 600px;
-      margin: 50px auto;
-      padding: 20px;
-      border-radius: 10px;
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    select, button {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-    }
-
-    select {
-      background-color: #34495e;
-      color: white;
-    }
-
-    button {
-      background-color: #4ca1af;
-      color: white;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #2c3e50;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Display</title>
 </head>
 <body>
-  <div class="container">
-    <h1>DC Result Scraped</h1>
-    <label for="classSelect">Select Class:</label>
-    <select id="classSelect">
-      <option value="" disabled selected>Choose Class</option>
-      <option value="class11">Class 11</option>
-      <option value="class12">Class 12</option>
-    </select>
+    <h1>Select Class and Exam</h1>
+    <form id="result-form">
+        <label for="class">Class:</label>
+        <select name="class" id="class" required>
+            <option value="class-11">Class 11</option>
+            <option value="class-12">Class 12</option>
+        </select><br><br>
 
-    <label for="examSelect">Select Exam:</label>
-    <select id="examSelect" disabled>
-      <option value="" disabled selected>Choose Exam</option>
-    </select>
+        <label for="exam">Exam:</label>
+        <select name="exam" id="exam" required>
+            <option value="exam-1">Exam 1</option>
+            <option value="exam-2">Exam 2</option>
+        </select><br><br>
 
-    <button id="submitBtn">Submit</button>
-  </div>
+        <button type="submit">Submit</button>
+    </form>
 
-  <script>
-    // JavaScript to dynamically update the exam list
-    const classSelect = document.getElementById("classSelect");
-    const examSelect = document.getElementById("examSelect");
+    <div id="result"></div>
 
-    // Define exam options for each class
-    const exams = {
-      class11: ["Midterm", "Final Exam", "Mock Test"],
-      class12: ["Prelims", "Board Exam", "Unit Test"]
-    };
+    <script>
+        document.getElementById('result-form').addEventListener('submit', function(event) {
+            event.preventDefault();
 
-    classSelect.addEventListener("change", function() {
-      // Clear the exam dropdown
-      examSelect.innerHTML = '<option value="" disabled selected>Choose Exam</option>';
+            const classValue = document.getElementById('class').value;
+            const examValue = document.getElementById('exam').value;
 
-      // Enable the exam dropdown
-      examSelect.disabled = false;
-
-      // Get the selected class
-      const selectedClass = classSelect.value;
-
-      // Populate the exam dropdown
-      exams[selectedClass].forEach(exam => {
-        const option = document.createElement("option");
-        option.value = exam.toLowerCase().replace(/\s/g, "_"); // Create a value-friendly string
-        option.textContent = exam;
-        examSelect.appendChild(option);
-      });
-    });
-  </script>
+            fetch('/get-result', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ class: classValue, exam: examValue })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultDiv = document.getElementById('result');
+                if (data.success) {
+                    const table = document.createElement('table');
+                    table.innerHTML = data.tableData;  // HTML table returned from backend
+                    resultDiv.innerHTML = '';  // Clear previous content
+                    resultDiv.appendChild(table);
+                } else {
+                    resultDiv.innerHTML = 'No data found for this selection.';
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
 </body>
 </html>
