@@ -6,7 +6,7 @@ const PORT = 3000;
 // Middleware to parse incoming JSON requests
 app.use(express.json());
 app.use(express.static('public')); // Serve static files like CSS, JS, etc.
-app.use(express.static('result')); // Serve result files from the 'result' directory
+app.use(express.static('results')); // Serve result files from the 'result' directory
 
 // Handle POST request to '/get-result'
 app.post('/get-result', (req, res) => {
