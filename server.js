@@ -18,7 +18,7 @@ app.post('/get-result', (req, res) => {
     }
 
     // Construct the file path based on the examName selected
-    const resultFilePath = path.join(__dirname, 'results', `${examName}.html`);
+    const resultFilePath = path.join(__dirname, 'result', `${examName}.html`);
     
     console.log(`Looking for result file at: ${resultFilePath}`); // Log for debugging
 
