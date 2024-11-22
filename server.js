@@ -1,71 +1,36 @@
 const express = require('express');
 const path = require('path');
-const fs = require('fs');
-const cors = require('cors');
-
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
-// Middleware
-app.use(cors());
-app.use(express.static(path.join(__dirname, 'public')));
+// Middleware to parse incoming JSON requests
+app.use(express.json());
+app.use(express.static('public')); // Serve static files like CSS, JS, etc.
+app.use(express.static('result')); // Serve result files from the 'result' directory
 
-// API endpoint to get the list of exams based on the selected criteria
-app.get('/api/exams', (req, res) => {
-    const { level, group, session } = req.query;
+// Handle POST request to '/get-result'
+app.post('/get-result', (req, res) => {
+    const { examName, password } = req.body;
 
-    if (!level || !group || !session) {
-        return res.status(400).json({ error: 'Missing required parameters' });
+    // Validate password
+    if (password !== 'dcstudent') {
+        return res.json({ success: false, message: 'Invalid password.' });
     }
 
-    // Here you would retrieve the exam list based on the parameters (you can hardcode or fetch from a database)
-    // For now, we'll use a simple hardcoded mock data
-    const exams = getExams(level, group, session);
+    // Check if the exam file exists in the result folder
+    const resultFilePath = path.join(__dirname, 'results', `${examName}.html`);
 
-    res.json({ exams });
+    // If the file exists, send it back to the frontend
+    if (require('fs').existsSync(resultFilePath)) {
+        const resultHTML = require('fs').readFileSync(resultFilePath, 'utf-8');
+        return res.json({ success: true, resultHTML: resultHTML });
+    }
+
+    // If the exam result file doesn't exist, send an error
+    res.json({ success: false, message: 'Result file not found.' });
 });
 
-// Function to mock fetching exams based on parameters
-function getExams(level, group, session) {
-    // Replace this mock logic with real data or database querying as needed
-    if (level === 'HSC' && group === 'Science') {
-        return ['Science Exam 1', 'Science Exam 2'];
-    }
-    if (level === 'HSC' && group === 'Business Studies') {
-        return ['Business Studies Exam 1', 'Business Studies Exam 2'];
-    }
-    if (level === 'HSC' && group === 'Humanities') {
-        return ['Humanities Exam 1', 'Humanities Exam 2'];
-    }
-    return [];
-}
-
-// API endpoint to get the result HTML for a specific exam
-app.get('/api/results', (req, res) => {
-    const { exam } = req.query;
-
-    if (!exam) {
-        return res.status(400).json({ error: 'Exam parameter is required' });
-    }
-
-    // Check if the result file exists for the requested exam
-    const examFilePath = path.join(__dirname, 'results', `${exam}.html`);
-
-    fs.readFile(examFilePath, 'utf8', (err, data) => {
-        if (err) {
-            return res.status(404).json({ error: 'Result file not found' });
-        }
-        res.send(data);
-    });
-});
-
-// Start server
+// Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
-
-
-
-
-
-
