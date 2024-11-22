@@ -1,27 +1,62 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const xlsx = require('xlsx');
+const path = require('path');
+
 const app = express();
 const port = 3000;
 
-// Middleware to parse JSON request bodies
+// Middleware for parsing JSON data
 app.use(bodyParser.json());
+app.use(express.static('docs'));  // To serve your HTML file and other assets
 
-// Serve static HTML files from 'docs' directory
-app.use(express.static('docs'));
-
-// Handle POST request to '/get-result' route
+// Endpoint to get result based on class and exam selection
 app.post('/get-result', (req, res) => {
-    const { class: selectedClass, exam: selectedExam } = req.body;
+    const { class: className, exam } = req.body;
 
-    // For now, let's just return a simple message
-    const result = {
-        message: `You selected ${selectedClass} for the ${selectedExam} exam.`,
-    };
+    // Determine the file based on class and exam
+    const fileName = `${className}-${exam}.xlsx`; // You may need to adjust this logic
+    const filePath = path.join(__dirname, 'uploads', fileName); // Assuming uploaded files are stored in 'uploads' directory
 
-    res.json(result);  // Send the result as JSON
+    // Check if the file exists
+    if (!filePath || !require('fs').existsSync(filePath)) {
+        return res.status(404).json({ success: false, message: 'File not found' });
+    }
+
+    // Read the Excel file
+    const workbook = xlsx.readFile(filePath);
+    const sheetName = workbook.SheetNames[0];
+    const sheet = workbook.Sheets[sheetName];
+
+    // Convert the sheet data to JSON
+    const resultData = xlsx.utils.sheet_to_json(sheet);
+
+    // Generate HTML table for displaying the results
+    let tableHtml = '<thead><tr>';
+    if (resultData.length > 0) {
+        // Create table headers
+        Object.keys(resultData[0]).forEach(key => {
+            tableHtml += `<th>${key}</th>`;
+        });
+        tableHtml += '</tr></thead><tbody>';
+
+        // Create table rows
+        resultData.forEach(row => {
+            tableHtml += '<tr>';
+            Object.values(row).forEach(value => {
+                tableHtml += `<td>${value}</td>`;
+            });
+            tableHtml += '</tr>';
+        });
+
+        tableHtml += '</tbody>';
+    }
+
+    // Send back the table HTML
+    res.json({ success: true, tableData: tableHtml });
 });
 
-// Start the server
+// Start server
 app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
+    console.log(`Server running at http://localhost:${port}`);
 });
