@@ -1,41 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DcResultScraped</title>
-    <link rel="stylesheet" href="purple blue.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DC Result Scraped</title>
+  <style>
+    /* Add your existing CSS styling here */
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #2c3e50, #4ca1af);
+      color: white;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    select {
+      background-color: #34495e;
+      color: white;
+    }
+
+    button {
+      background-color: #4ca1af;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2c3e50;
+    }
+  </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <h1>DcResultScraped</h1>
-    </header>
+  <div class="container">
+    <h1>DC Result Scraped</h1>
+    <label for="classSelect">Select Class:</label>
+    <select id="classSelect">
+      <option value="" disabled selected>Choose Class</option>
+      <option value="class11">Class 11</option>
+      <option value="class12">Class 12</option>
+    </select>
 
-    <!-- Main Content Section -->
-    <main>
-        <form action="#" method="POST" class="form-container">
-            <!-- Class Dropdown -->
-            <label for="class">Select Class:</label>
-            <select name="class" id="class">
-                <option value="class1">Class 11</option>
-               <option value="class2">Class 12</option>
-                <!-- <option value="class3">Class </option>
-                <option value="class4">Class </option -->>>
-            </select>
+    <label for="examSelect">Select Exam:</label>
+    <select id="examSelect" disabled>
+      <option value="" disabled selected>Choose Exam</option>
+    </select>
 
-            <!-- Exam Dropdown -->
-            <label for="exam">Select Exam:</label>
-            <select name="exam" id="exam">
-                <option value="exam1">Exam 1</option>
-                <option value="exam2">Exam 2</option>
-                <option value="exam3">Exam 3</option>
-                <option value="exam4">Exam 4</option>
-            </select>
+    <button id="submitBtn">Submit</button>
+  </div>
 
-            <!-- Submit Button -->
-            <button type="submit">Submit</button>
-        </form>
-    </main>
+  <script>
+    // JavaScript to dynamically update the exam list
+    const classSelect = document.getElementById("classSelect");
+    const examSelect = document.getElementById("examSelect");
+
+    // Define exam options for each class
+    const exams = {
+      class11: ["Midterm", "Final Exam", "Mock Test"],
+      class12: ["Prelims", "Board Exam", "Unit Test"]
+    };
+
+    classSelect.addEventListener("change", function() {
+      // Clear the exam dropdown
+      examSelect.innerHTML = '<option value="" disabled selected>Choose Exam</option>';
+
+      // Enable the exam dropdown
+      examSelect.disabled = false;
+
+      // Get the selected class
+      const selectedClass = classSelect.value;
+
+      // Populate the exam dropdown
+      exams[selectedClass].forEach(exam => {
+        const option = document.createElement("option");
+        option.value = exam.toLowerCase().replace(/\s/g, "_"); // Create a value-friendly string
+        option.textContent = exam;
+        examSelect.appendChild(option);
+      });
+    });
+  </script>
 </body>
 </html>
