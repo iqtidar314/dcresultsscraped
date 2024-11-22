@@ -1,0 +1,17 @@
+{
+  "name": "dcresultsscraped",
+  "version": "1.0.0",
+  "description": "A simple Node.js app to serve your webpage and handle backend logic",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "author": "Your Name",
+  "license": "ISC"
+}
