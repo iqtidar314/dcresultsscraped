@@ -5,6 +5,7 @@ const app = express();
 
 
 
+
 // Serve static files like index.html, style.css, script.js from the 'public' folder
 app.use(express.static(path.join(__dirname, 'public')));
 

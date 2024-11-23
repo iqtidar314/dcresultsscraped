@@ -1,14 +1,57 @@
 /* Background styling */
 body {
     display: flex;
+    margin: 0;
+    padding: 0;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: column; /* Stack content vertically */
     margin: 0;
+    align-items: center;
+    justify-content: flex-start; /* Align items at the top */
+    display: flex;
     font-family: Arial, sans-serif;
+    padding-top: 2rem; /* Add some space at the top */
     background: linear-gradient(135deg, #020024, #090979, #00d4ff); /* Futuristic gradient */
     color: #fff; /* Ensures contrast for text */
 }
+
+
+/* Header Styling (Logo and College Name) */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.logo {
+    height: 120px;
+    margin-right: 5px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #007BFF;
+}
+
+.college-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #c9cdff;
+    margin-bottom: 1rem;
+}
+
 
 /* Form container styling */
 .form-container {
@@ -107,4 +150,19 @@ select option {
     color: #000; /* Dark font color for better contrast */
     background-color: #fff; /* Light background for contrast */
 }
+
+/* Footer Section (Introduction) */
+.footer {
+    margin-top: 3rem;
+    font-size: 1rem;
+    text-align: center;
+    color: #777;
+}
+
+.footer p {
+    margin: 0.5rem 0;
+}
+
+
+
 
