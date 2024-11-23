@@ -3,6 +3,14 @@ const fs = require('fs');
 const path = require('path');
 const app = express();
 
+
+
+// Serve static files like index.html, style.css, script.js from the 'public' folder
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+
+
 // Middleware to parse JSON data from requests
 app.use(express.json());
 
