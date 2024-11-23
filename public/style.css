@@ -1,30 +1,110 @@
+/* Background styling */
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
     font-family: Arial, sans-serif;
-    margin: 20px;
+    background: linear-gradient(135deg, #020024, #090979, #00d4ff); /* Futuristic gradient */
+    color: #fff; /* Ensures contrast for text */
+}
+
+/* Form container styling */
+.form-container {
+    background: rgba(255, 255, 255, 0.1); /* Translucent white */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Border for contrast */
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37); /* Depth effect */
+    padding: 2rem;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Header styling */
+h1 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    color: #00d4ff; /* Accent color */
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 1.2rem;
+    text-align: left;
 }
 
 label {
     display: block;
-    margin-top: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: select {
+        color: #000; /* Default font color for selected text */
+    }
+    
+    /* Style the dropdown options */
+    select option {
+        color: #000; /* Dark font color for better contrast */
+        background-color: #fff; /* Light background for contrast */
+    }
+    #6b8cb6; /* Softer white */
 }
 
 select, input {
-    margin-top: 5px;
-    padding: 8px;
-    width: 200px;
+    width: 100%;
+    padding: 0.7rem;
+    font-size: 0.9rem;
+    color: #ffffff; /* Text color */
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent input background */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
 }
 
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
+/* Focus effects for inputs */
+select:focus, input:focus {
+    border: 1px solid #00d4ff;
+    box-shadow: 0 0 5px #00d4ff; /* Glow on focus */
+}
+
+/* Button styling */
+.fancy-btn {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(90deg, #0093E9, #80D0C7); /* Futuristic button gradient */
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 147, 233, 0.4); /* Button shadow */
 }
 
-
-#result-container {
-    margin-top: 20px;
-    font-size: 16px;
+.fancy-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 147, 233, 0.6); /* Enhance shadow on hover */
 }
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .form-container {
+        width: 90%;
+        padding: 1.5rem;
+    }
+}
+select {
+    color: #ffffff; /* Default font color for selected text */
+}
+
+/* Style the dropdown options */
+select option {
+    color: #000; /* Dark font color for better contrast */
+    background-color: #fff; /* Light background for contrast */
+}
+

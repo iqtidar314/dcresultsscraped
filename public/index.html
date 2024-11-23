@@ -4,60 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exam Result Viewer</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320978152963366"
-     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css"> <!-- External CSS (optional for styling) -->
+    <link rel="stylesheet" href="style.css"> <!-- External CSS -->
 </head>
 <body>
-    <h1>Exam Result Viewer</h1>
+    <div class="form-container">
+        <h1>Exam Result Viewer</h1>
 
-    <!-- Dropdown for Exam Level -->
-    <label for="exam-level">Exam Level:</label>
-    <select id="exam-level">
-        <option value="">Select Exam Level</option>
-        <option value="HSC">HSC</option>
-        <!-- You can add more levels like SSC, A-Level, etc. -->
-    </select>
+        <!-- Form Fields -->
+        <div class="form-group">
+            <label for="exam-level">Exam Level:</label>
+            <select id="exam-level">
+                <option value="">Select Exam Level</option>
+                <option value="HSC">HSC</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="group">Group:</label>
+            <select id="group">
+                <option value="">Select Group</option>
+                <option value="Science">Science</option>
+                <option value="Business Studies">Business Studies</option>
+                <option value="Humanities">Humanities</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="session">Session:</label>
+            <select id="session">
+                <option value="">Select Session</option>
+                <option value="2023-2024">2023-2024</option>
+                <option value="2024-2025">2024-2025</option>
+                <option value="2025-2026">2025-2026</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exam">Exam:</label>
+            <select id="exam">
+                <option value="">Select Exam</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter password" />
+        </div>
 
-    <!-- Dropdown for Group -->
-    <label for="group">Group:</label>
-    <select id="group">
-        <option value="">Select Group</option>
-        <option value="Science">Science</option>
-        <option value="Business Studies">Business Studies</option>
-        <option value="Humanities">Humanities</option>
-    </select>
-
-    <!-- Dropdown for Session -->
-    <label for="session">Session:</label>
-    <select id="session">
-        <option value="">Select Session</option>
-        <option value="2023-2024">2023-2024</option>
-        <option value="2024-2025">2024-2025</option>
-        <option value="2025-2026">2025-2026</option>
-    </select>
-
-    <!-- Dropdown for Exam List (Dynamically updated) -->
-    <label for="exam">Exam:</label>
-    <select id="exam">
-        <option value="">Select Exam</option>
-    </select>
-
-    <!-- Password Input -->
-    <label for="password">Password:</label>
-    <input type="password" id="password" placeholder="Enter password" />
-
-    <!-- Submit Button -->
-    <button id="submit-btn">Submit</button>
-
-    <!-- Container for displaying result -->
-    <div id="result-container">
-        <!-- The exam result will be displayed here -->
+        <button id="submit-btn" class="fancy-btn">View Result</button>
     </div>
 
-    <!-- Link to your external JavaScript file -->
-    <script src="script.js"></script> <!-- External JS file -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320978152963366"
-     crossorigin="anonymous"></script>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
