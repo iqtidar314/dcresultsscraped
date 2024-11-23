@@ -70,8 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
         .then((res) => res.json())
         .then((data) => {
             if (data.success) {
-                const newWindow = window.open('', '_blank');
-                newWindow.document.write(data.resultHTML);
+                const resultURL = `/results/${selectedExam}.html`;
+                window.open(resultURL, '_blank');
             } else {
                 alert(data.message);
             }
@@ -82,3 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+
