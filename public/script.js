@@ -16,59 +16,91 @@ const examMapping = {
         }
     }
 };
-
-// Function to update the Exam dropdown based on selected Exam Level, Group, and Session
-function updateExamList() {
-    const examLevel = document.getElementById('exam-level').value;
-    const group = document.getElementById('group').value;
-    const session = document.getElementById('session').value;
+document.addEventListener('DOMContentLoaded', () => {
+    // References to dropdowns and input fields
+    const examLevelDropdown = document.getElementById('exam-level');
+    const groupDropdown = document.getElementById('group');
+    const sessionDropdown = document.getElementById('session');
     const examDropdown = document.getElementById('exam');
+    const passwordInput = document.getElementById('password');
+    const submitButton = document.getElementById('submit-btn');
+    const resultContainer = document.getElementById('result-container');
 
-    // Clear existing options in the Exam dropdown
-    examDropdown.innerHTML = '<option value="">Select Exam</option>';
+    // Simulate an exam list based on dropdown selections
+    const examData = {
+        "HSC_Science_2023-2024": ["CT-1", "Midterm", "Final"],
+        "HSC_Science_2024-2025": ["class-11_2024-2025_CT-1", "Midterm", "Final"],
+        "HSC_Business Studies_2023-2024": ["CT-1", "Midterm"],
+        "HSC_Humanities_2023-2024": ["CT-1"],
+    };
 
-    // Check if the selected combination exists in the mapping
-    if (examMapping[examLevel] && examMapping[examLevel][group] && examMapping[examLevel][group][session]) {
-        const exams = examMapping[examLevel][group][session];
+    // Function to update the exam list
+    function updateExamList() {
+        // Get selected values
+        const examLevel = examLevelDropdown.value;
+        const group = groupDropdown.value;
+        const session = sessionDropdown.value;
 
-        // Populate the Exam dropdown with available exams
-        exams.forEach(exam => {
-            const option = document.createElement('option');
-            option.value = exam;
-            option.textContent = exam;
-            examDropdown.appendChild(option);
+        // Construct key for exam data
+        const key = `${examLevel}_${group}_${session}`;
+        
+        // Clear existing options
+        examDropdown.innerHTML = '<option value="">Select Exam</option>';
+        
+        // Populate exam options based on the key
+        if (examData[key]) {
+            examData[key].forEach(exam => {
+                const option = document.createElement('option');
+                option.value = exam;
+                option.textContent = exam;
+                examDropdown.appendChild(option);
+            });
+        }
+    }
+
+    // Event listeners for dropdowns
+    examLevelDropdown.addEventListener('change', updateExamList);
+    groupDropdown.addEventListener('change', updateExamList);
+    sessionDropdown.addEventListener('change', updateExamList);
+
+    // Function to submit the form
+    submitButton.addEventListener('click', () => {
+        const selectedExam = examDropdown.value;
+        const password = passwordInput.value;
+
+        // Validate inputs
+        if (!selectedExam) {
+            alert('Please select an exam.');
+            return;
+        }
+        if (!password) {
+            alert('Please enter the password.');
+            return;
+        }
+
+        // Send data to the backend
+        fetch('/get-result', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                examName: selectedExam, // The exam name selected
+                password: password      // The password entered by the user
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Display the result in the container
+                resultContainer.innerHTML = data.resultHTML;
+            } else {
+                alert(data.message); // Show error message from the backend
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Something went wrong while fetching the result.');
         });
-    } else {
-        console.error('No exams available for the selected inputs.');
-    }
-}
-
-
-
-document.getElementById('submit-btn').addEventListener('click', function (e) {
-    e.preventDefault(); // Prevent form submission (page reload)
-
-    const examName = document.getElementById('exam').value;
-    const password = document.getElementById('password').value;
-
-    // Validate password and exam selection
-    if (password === "dcstudent" && examName) {
-        // Redirect to the result page corresponding to the selected exam
-        window.location.href = `result/${examName}.html`;
-    } else {
-        alert('Invalid password or exam selection. Please try again.');
-    }
+    });
 });
-
-
-
-// Add event listeners to the dropdown menus
-document.getElementById('exam-level').addEventListener('change', updateExamList);
-document.getElementById('group').addEventListener('change', updateExamList);
-document.getElementById('session').addEventListener('change', updateExamList);
-
-
-
-
-
-
