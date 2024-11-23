@@ -1,0 +1,284 @@
+[33mcommit 4cec31e08e1153880d94b59ef4e8c04ad4ef11f0[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Sat Nov 23 15:42:07 2024 +0600
+
+    Update index.html
+
+[33mcommit 58369d21823209ab739fb24feb6c4c343cc96bc5[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Sat Nov 23 15:22:36 2024 +0600
+
+    Update index.html
+
+[33mcommit 683ced3f120fa12656a1edb707afdd026286b7f0[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Sat Nov 23 15:00:43 2024 +0600
+
+    Update index.html
+
+[33mcommit 9514d058a7a1798b62aa0c68bc67e36fb4c0136a[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Sat Nov 23 14:56:28 2024 +0600
+
+    Update index.html
+
+[33mcommit 87f3cad1718d1ce4f1b8bf8e017a76b1a6007770[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Sat Nov 23 14:46:42 2024 +0600
+
+    Update index.html
+
+[33mcommit 24842a4de91fcb72d904dfd8dfc7094776e6db52[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Iqtidar <iqtidar3.14@gmail.com>
+Date:   Sat Nov 23 14:09:31 2024 +0600
+
+    Describe the changes made, e.g., Add API routes for results
+
+[33mcommit 7bb28ca7026939996b250578e3fd7dbc9a8bf60a[m
+Author: Iqtidar <iqtidar3.14@gmail.com>
+Date:   Sat Nov 23 14:02:20 2024 +0600
+
+    Describe the changes made, e.g., Add API routes for results
+
+[33mcommit 38b11a309272105d14af3b0096e7651467aafaaa[m
+Author: Iqtidar <iqtidar3.14@gmail.com>
+Date:   Sat Nov 23 13:50:40 2024 +0600
+
+    Describe the changes made, e.g., Add API routes for results
+
+[33mcommit cf3bc18bfca5d26cee0d8a75c62433e0891b3771[m
+Author: Iqtidar <iqtidar3.14@gmail.com>
+Date:   Sat Nov 23 13:13:21 2024 +0600
+
+    Describe the changes made, e.g., Add API routes for results
+
+[33mcommit 9e23413c75d02e37299121f475cb968903be51bd[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Sat Nov 23 02:37:45 2024 +0600
+
+    Update server.js
+
+[33mcommit 7ec3eca28dff325a5e5887a8b1fef7bef7d086bd[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Sat Nov 23 02:27:04 2024 +0600
+
+    Update server.js
+
+[33mcommit 6979edcbb2affb09137b60f6eaaa9847f675a635[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Sat Nov 23 02:24:20 2024 +0600
+
+    Update script.js
+
+[33mcommit 31032d3ef1accb17246f178000de6d113556df17[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Sat Nov 23 02:22:24 2024 +0600
+
+    Add files via upload
+
+[33mcommit 551c1db49e6b6e662dba190cdff9347d365c91ee[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Sat Nov 23 02:22:10 2024 +0600
+
+    Create pp
+
+[33mcommit 76b55e0accf796c5f8632aadac1542d962c48f9d[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Sat Nov 23 02:21:05 2024 +0600
+
+    Delete results directory
+
+[33mcommit 76b9ce887088f9e630f513b2c51094ec3bca5050[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Sat Nov 23 01:49:45 2024 +0600
+
+    Update server.js
+
+[33mcommit a58bf564b37a38b7f9cc140aefc17f06b18f8e61[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Sat Nov 23 01:37:30 2024 +0600
+
+    Update server.js
+
+[33mcommit b5f94f7eec8eb2131d21ea7a2e75d354113a31ad[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Sat Nov 23 01:36:08 2024 +0600
+
+    Update server.js
+
+[33mcommit 48bcf6e40df2b737ac205e6c0ede98e5576893bf[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Sat Nov 23 01:11:58 2024 +0600
+
+    Update script.js
+
+[33mcommit 431000dda691969e9780a1745e87d751dacb60d1[m
+Author: Iqtidar <iqtidar3.14@gmail.com>
+Date:   Sat Nov 23 00:55:55 2024 +0600
+
+    Updated server.js and added public and results directories
+
+[33mcommit 49d200e1d42ec9de49aa07fdc5656e5f9979f815[m
+Author: Iqtidar <iqtidar3.14@gmail.com>
+Date:   Sat Nov 23 00:33:40 2024 +0600
+
+    Updated server.js and added public and results directories
+
+[33mcommit 3606fd83e26c4afa75965eadbea7018b98b1e36c[m
+Author: Iqtidar <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 23:15:25 2024 +0600
+
+    Initial setup with basic server
+
+[33mcommit d4ece147cb4148681e2516c13c2c14e96cc229ed[m
+Author: Iqtidar <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 22:59:25 2024 +0600
+
+    Initial setup with basic server
+
+[33mcommit f74b3f4a9dc32ff6e79da533e37bef33676204f5[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 22:22:26 2024 +0600
+
+    Delete uploads directory
+
+[33mcommit ff85b41cec91a576f0eed36bba462a5627a27e10[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 22:22:16 2024 +0600
+
+    Delete server.js
+
+[33mcommit e83fa065c80ae653010c6ea5b8c1d5890c0b7990[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 22:22:07 2024 +0600
+
+    Delete package.json
+
+[33mcommit d318dbb5c68d20b0b62a600cee173f1e6c67e1b7[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 22:21:55 2024 +0600
+
+    Delete docs directory
+
+[33mcommit 80accd7f30d1141a3aea8fefb83d3528fb67b6c8[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 22:21:47 2024 +0600
+
+    Delete docs/index.html
+
+[33mcommit 1684f5a82881fda8137f1328e3d57f4635fc8929[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 20:47:47 2024 +0600
+
+    Update package.json
+
+[33mcommit 25ef854d5d96765feaeddfb17e8dbb23ff61c23a[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 20:14:13 2024 +0600
+
+    Update package.json
+
+[33mcommit 8e9c38a831a711a9e1c4b15b58b2431c8645e893[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 19:27:13 2024 +0600
+
+    Rename CT-1 Result2.xlsx to class-11-exam-1.xlsx
+
+[33mcommit 149553113b35b37d3310ef232cda58fca793a251[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 19:24:58 2024 +0600
+
+    Update server.js
+
+[33mcommit d850937188af39618f5033d31e32ed220d1aa355[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 19:24:02 2024 +0600
+
+    Update index.html
+
+[33mcommit 3789e4db6206de13581f2f5f2432a21d1b6c3a42[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 19:13:00 2024 +0600
+
+    Add files via upload
+
+[33mcommit f3cb993c250e4b3ff528aecc5f286649bd7935c0[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 19:12:42 2024 +0600
+
+    Create iu
+
+[33mcommit 21f707fa6ac998383f3209e32c25e90bbfd34c1c[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 18:52:55 2024 +0600
+
+    Update server.js
+
+[33mcommit 53416c60ac1dfeeeccbb6fad658a968a616a821e[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 18:29:31 2024 +0600
+
+    Create server.js
+
+[33mcommit b12984b1e407316401acf24c6ce1b6893c7acd13[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 18:25:09 2024 +0600
+
+    Create package.json
+
+[33mcommit eb8736828c1b34e9a6a90ddabbe5b98d2f86469f[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 10:40:08 2024 +0000
+
+    it will run without the css file
+
+[33mcommit 55ebc9281029d7df3939480b65fc4b81d5ec996a[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 16:22:35 2024 +0600
+
+    Create purple blue.css
+
+[33mcommit c9a4975bc90372bc7165b8205f74bafdfa60756f[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 16:22:05 2024 +0600
+
+    Create index.html
+
+[33mcommit 26333417f42d09698ea1e5b5bac111e4f770eae2[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 16:21:21 2024 +0600
+
+    Delete root directory
+
+[33mcommit dcd2fc7b545f1b41efe7151023d588ef92705114[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 16:01:43 2024 +0600
+
+    Rename purple blue. css to purple blue.css
+
+[33mcommit 177655cee09019c88f0eeb52ccf66b0f31899006[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 15:53:37 2024 +0600
+
+    Create purple blue. css
+
+[33mcommit 5babdcb43df0683e63b42bb957166d900d746e9e[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 15:52:51 2024 +0600
+
+    Create index.html
+
+[33mcommit b096f5c3c1604576e7c7104033816caf7c0cab90[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 15:52:10 2024 +0600
+
+    Delete purple blue.css
+
+[33mcommit 3ec4ea2884e7122c9ac26edee6b52aa51c8a9cdc[m
+Author: iqtidar314 <iqtidar3.14@gmail.com>
+Date:   Fri Nov 22 15:51:56 2024 +0600
+
+    Delete dcstudent directory
+
+[33mcommit 1e0eb4602dd377b53537dad5024d2c6b86b36c49[m
+Author: iqtidar314 <iqtidar3
