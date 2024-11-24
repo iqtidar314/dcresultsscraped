@@ -1,48 +1,68 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+
 const app = express();
-
-
-
-
-// Serve static files like index.html, style.css, script.js from the 'public' folder
+app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Mock database: Exam names mapped to embed links
+const examData = {
+    "class-11_2024-2025_CT-1": "https://1drv.ms/x/c/ef87fe212c714713/IQRWrKoZOtZAQaldW4hD4-nXAed55g1lIK36hs3qHGTurFk",
+    "class-12_2024-2025_Final": "https://docs.google.com/spreadsheets/d/e/YOUR_PUBLIC_LINK_2/pubhtml?widget=true&headers=false",
+    "midterm_2023": "https://docs.google.com/spreadsheets/d/e/YOUR_PUBLIC_LINK_3/pubhtml?widget=true&headers=false"
+};
 
-
-
-// Middleware to parse JSON data from requests
-app.use(express.json());
-
-// Serve static files in the "results" directory
-app.use('/results', express.static(path.join(__dirname, 'results')));
-
-// POST route to handle result requests
+// Route to dynamically generate a result page
 app.post('/get-result', (req, res) => {
     const { examName, password } = req.body;
 
-    // Validate password
+    // Validate the password
     if (password !== 'dcstudent') {
-        return res.status(401).json({ success: false, message: 'Invalid password.' });
+        return res.status(401).send('<h1>401 Unauthorized: Invalid Password</h1>');
     }
 
-    // Construct the result file path
-    const resultFilePath = path.join(__dirname, 'results', `${examName}.html`);
-
-    // Check if the requested file exists
-    if (fs.existsSync(resultFilePath)) {
-        // Read and send the file content
-        const resultHTML = fs.readFileSync(resultFilePath, 'utf-8');
-        return res.status(200).json({ success: true, resultHTML });
-    } else {
-        // If file not found, send error message
-        return res.status(404).json({ success: false, message: 'Result file not found.' });
+    // Fetch the embed link for the requested exam
+    const embedLink = examData[examName];
+    if (!embedLink) {
+        return res.status(404).send('<h1>404 Not Found: Result Not Available</h1>');
     }
+
+    // Path to the template HTML file
+    const templatePath = path.join(__dirname, 'public', 'template', 'template.html');
+
+    // Read and modify the template file
+    fs.readFile(templatePath, 'utf8', (err, templateHTML) => {
+        if (err) {
+            console.error('Error reading template.html:', err);
+            return res.status(500).send('<h1>500 Internal Server Error</h1>');
+        }
+
+        // Replace the placeholder with the dynamic embed link
+        const updatedHTML = templateHTML
+        .replace('PLACEHOLDER_EMBED_LINK',embedLink)
+        .replace('{{EXAM_NAME}}', examName);
+
+        // Save the generated HTML as a static file
+        const resultFileName = `${examName.replace(/[^a-zA-Z0-9_-]/g, '_')}.html`; // Safe filename
+        const resultFilePath = path.join(__dirname, 'public', 'results', resultFileName);
+
+        fs.writeFile(resultFilePath, updatedHTML, (writeErr) => {
+            if (writeErr) {
+                console.error('Error saving result file:', writeErr);
+                return res.status(500).send('<h1>500 Internal Server Error</h1>');
+            }
+
+            // Return the unique URL of the saved file
+            const resultURL = `/results/${resultFileName}`;
+            res.json({ success: true, url: resultURL });
+        });
+    });
 });
 
+
 // Start the server
-const PORT = 3000; // You can customize the port if needed
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find Dhaka College exam results at DC Results Scraped — check your scores and compare your position with other students effortlessly.">
+  <meta name="author" content="Iqtidar, SCI-A-107, class-11, Dhaka College">
+  <title>DC Results Scraped - Results</title>
+  <link rel="stylesheet" href="/template/template.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320978152963366"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <div class="logo-container">
+      <img src="/images/logo.png" alt="DC Results Logo" class="logo">
+      <h1>DCResultsScraped</h1>
+    </div>
+   <!--in p tag you can add something here-->
+  </header>
+
+  <!-- Exam Name -->
+  <div class="exam-name">
+    <h1>{{EXAM_NAME}}</h1>
+  </div>
+
+  <!-- Instructions Button -->
+  <div class="instructions-button">
+    <button id="show-instructions" class="fancy-btn">View Instructions</button>
+  </div>
+
+  <!-- Embedded Excel -->
+  <div class="excel-container">
+    <iframe frameborder="0" scrolling="no"  class="excel-frame" src="PLACEHOLDER_EMBED_LINK?em=2&ActiveCell='Sheet1'!A1&wdHideHeaders=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
+  </div>
+
+
+  <!-- Instructions Modal -->
+  <div id="instructions-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="close-modal">&times;</span>
+      <h2>How to Use the Result Sheet</h2>
+      <ul>
+        <li>You can sort data by clicking on column headers.</li>
+        <li>Use the search bar to find specific students.</li>
+        <li>Resize columns to view data clearly.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="/template/template.js"></script>
+</body>
+</html>
+
+
+
+
+
+

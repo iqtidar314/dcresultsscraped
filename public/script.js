@@ -1,4 +1,3 @@
-
 const examMapping = {
     "HSC": {
         "Science": {
@@ -61,27 +60,34 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Please fill all fields.');
             return;
         }
-
+        // Send the selected exam and password to the backend
         fetch('/get-result', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ examName: selectedExam, password })
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                examName: selectedExam,
+                password: password,
+            }),
         })
-        .then((res) => res.json())
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch result');
+            }
+            return response.json();
+        })
         .then((data) => {
             if (data.success) {
-                const resultURL = `/results/${selectedExam}.html`;
-                window.open(resultURL, '_blank');
+                // Redirect to the unique result page URL
+                window.location.href = data.url;
             } else {
-                alert(data.message);
+                alert('Failed to generate result.');
             }
         })
-        .catch((err) => {
-            console.error(err);
-            alert('An error occurred while fetching the result.');
+        .catch((error) => {
+            console.error('Error:', error);
+            alert('Unable to load the result.');
         });
     });
 });
-
-
-
