@@ -4,8 +4,11 @@ const path = require('path');
 
 const app = express();
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(express.static(path.join(__dirname, 'public'), {
+    setHeaders: (res) => {
+        res.set('Cache-Control', 'public, max-age=86400'); // Cache for 1 day
+    }
+}));
 // Mock database: Exam names mapped to embed links
 const examData = {
     "class-11_2024-2025_CT-1": "https://1drv.ms/x/c/ef87fe212c714713/IQRWrKoZOtZAQaldW4hD4-nXAed55g1lIK36hs3qHGTurFk",
@@ -38,31 +41,30 @@ app.post('/get-result', (req, res) => {
             return res.status(500).send('<h1>500 Internal Server Error</h1>');
         }
 
-        // Replace the placeholder with the dynamic embed link
-        const updatedHTML = templateHTML
-        .replace('PLACEHOLDER_EMBED_LINK',embedLink)
-        .replace('{{EXAM_NAME}}', examName);
+       // Replace all occurrences of {{EXAM_NAME}} with the actual exam name
+       const updatedHTML = templateHTML
+       .replace(/{{EXAM_NAME}}/g, examName)  // Replace all instances of {{EXAM_NAME}}
+       .replace('PLACEHOLDER_EMBED_LINK', embedLink);  // Replace iframe embed link
 
-        // Save the generated HTML as a static file
-        const resultFileName = `${examName.replace(/[^a-zA-Z0-9_-]/g, '_')}.html`; // Safe filename
-        const resultFilePath = path.join(__dirname, 'public', 'results', resultFileName);
+   // Save the generated HTML as a static file
+   const resultFileName = `${examName.replace(/[^a-zA-Z0-9_-]/g, '_')}.html`; // Safe filename
+   const resultFilePath = path.join(__dirname, 'public', 'results', resultFileName);
 
-        fs.writeFile(resultFilePath, updatedHTML, (writeErr) => {
-            if (writeErr) {
-                console.error('Error saving result file:', writeErr);
-                return res.status(500).send('<h1>500 Internal Server Error</h1>');
-            }
+   fs.writeFile(resultFilePath, updatedHTML, (writeErr) => {
+       if (writeErr) {
+           console.error('Error saving result file:', writeErr);
+           return res.status(500).send('<h1>500 Internal Server Error</h1>');
+       }
 
-            // Return the unique URL of the saved file
-            const resultURL = `/results/${resultFileName}`;
-            res.json({ success: true, url: resultURL });
-        });
-    });
+       // Return the unique URL of the saved file
+       const resultURL = `/results/${resultFileName}`;
+       res.json({ success: true, url: resultURL });
+   });
 });
-
+});
 
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+console.log(`Server running at http://localhost:${PORT}`);
 });

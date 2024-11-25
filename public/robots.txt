@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /private/
+Allow: /
+
+Sitemap: https://dcresultsscraped.onrender.com/sitemap.xml
