@@ -14,9 +14,8 @@ const examData = {
     "class-11_2024-2025_CT-1": "https://1drv.ms/x/c/ef87fe212c714713/IQRWrKoZOtZAQaldW4hD4-nXAed55g1lIK36hs3qHGTurFk",
     "class-12_2024-2025_Final": "https://docs.google.com/spreadsheets/d/e/YOUR_PUBLIC_LINK_2/pubhtml?widget=true&headers=false",
     "midterm_2023": "https://docs.google.com/spreadsheets/d/e/YOUR_PUBLIC_LINK_3/pubhtml?widget=true&headers=false",
-    "Class Test 1 1st Year HSC - Business Studies 2024-2025": "https://1drv.ms/x/c/ef87fe212c714713/Ed7gNw_ziaxOjvl7bkR3VIgBi3caVuy4UOcEaI9uF0qVJQ?e=LMjCCX"
+    "Class Test 1 1st Year HSC - Business Studies 2024-2025": "https://workdrive.zohopublic.com/embed/ulwlaba665df28f024dfca870efa44a725a44?toolbar=false&appearance=light&themecolor=green"
 };
-
 // Route to dynamically generate a result page
 app.post('/get-result', (req, res) => {
     const { examName, password } = req.body;
