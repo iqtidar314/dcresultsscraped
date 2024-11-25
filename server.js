@@ -13,7 +13,8 @@ app.use(express.static(path.join(__dirname, 'public'), {
 const examData = {
     "class-11_2024-2025_CT-1": "https://1drv.ms/x/c/ef87fe212c714713/IQRWrKoZOtZAQaldW4hD4-nXAed55g1lIK36hs3qHGTurFk",
     "class-12_2024-2025_Final": "https://docs.google.com/spreadsheets/d/e/YOUR_PUBLIC_LINK_2/pubhtml?widget=true&headers=false",
-    "midterm_2023": "https://docs.google.com/spreadsheets/d/e/YOUR_PUBLIC_LINK_3/pubhtml?widget=true&headers=false"
+    "midterm_2023": "https://docs.google.com/spreadsheets/d/e/YOUR_PUBLIC_LINK_3/pubhtml?widget=true&headers=false",
+    "Class Test 1 1st Year HSC - Business Studies 2024-2025": "https://1drv.ms/x/c/ef87fe212c714713/Ed7gNw_ziaxOjvl7bkR3VIgBi3caVuy4UOcEaI9uF0qVJQ?e=LMjCCX"
 };
 
 // Route to dynamically generate a result page

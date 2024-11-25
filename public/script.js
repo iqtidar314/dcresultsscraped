@@ -7,7 +7,7 @@ const examMapping = {
         },
         "Business Studies": {
             "2023-2024": ["Midterm", "Final"],
-            "2024-2025": ["Midterm"]
+            "2024-2025": ["Class Test 1 1st Year HSC - Business Studies 2024-2025"]
         },
         "Humanities": {
             "2023-2024": ["CT-1", "Midterm"],
