@@ -1,17 +1,16 @@
 const examMapping = {
     "HSC": {
         "Science": {
-            "2023-2024": ["CT-1", "CT-2", "Final"],
-            "2024-2025": ["class-11_2024-2025_CT-1", "CT-2"],
-            "2025-2026": ["Final"]
+            "2023-2024": ["Test Exam _HSC-1st Year-Science_2023-2024"],
+            "2024-2025": ["CT-1_HSC-1st Year-Science_2024-2025", "SE_HSC-1st Year-Science_2024-2025", "Half Yearly_HSC-1st Year-Science_2024-2025", "CT-2_HSC-1st Year-Science_2024-2025", "Year Final_HSC-1st Year-Science_2024-2025"],
         },
         "Business Studies": {
-            "2023-2024": ["Midterm", "Final"],
-            "2024-2025": ["Class Test 1 1st Year HSC - Business Studies 2024-2025"]
+            "2023-2024": ["Test Exam _HSC-1st Year-Business Studies_2023-2024"],
+            "2024-2025": ["CT-1_HSC-1st Year-Business Studies_2024-2025", "SE_HSC-1st Year-Business Studies_2024-2025", "Half Yearly_HSC-1st Year-Business Studies_2024-2025", "CT-2_HSC-1st Year-Business Studies_2024-2025", "Year Final Exam_HSC-1st Year-Business Studies_2024-2025"]
         },
         "Humanities": {
-            "2023-2024": ["CT-1", "Midterm"],
-            "2024-2025": ["CT-1", "CT-2", "Final"]
+            "2023-2024": ["Test Exam _HSC-1st Year-Humanites_2023-2024"],
+            "2024-2025": ["CT-1_HSC-1st Year-Humanites_2024-2025", "SE_HSC-1st Year-Humanites_2024-2025", "Half Yearly_HSC-1st Year-Humanites_2024-2025", "CT-2_HSC-1st Year-Humanites_2024-2025", "Year Final_HSC-1st Year-Humanites_2024-2025"]
         }
     }
 };
@@ -34,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Validate selections before accessing examMapping
         if (examLevel && group && session) {
-            const exams = examMapping[examLevel]?.[group]?.[session] || [];
+            const exams = examMapping[examLevel] ? . [group] ? . [session] || [];
 
             // Populate the exam dropdown
             exams.forEach((exam) => {
@@ -62,32 +61,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         // Send the selected exam and password to the backend
         fetch('/get-result', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                examName: selectedExam,
-                password: password,
-            }),
-        })
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error('Failed to fetch result');
-            }
-            return response.json();
-        })
-        .then((data) => {
-            if (data.success) {
-                // Redirect to the unique result page URL
-                window.location.href = data.url;
-            } else {
-                alert('Failed to generate result.');
-            }
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-            alert('Unable to load the result.');
-        });
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    examName: selectedExam,
+                    password: password,
+                }),
+            })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch result');
+                }
+                return response.json();
+            })
+            .then((data) => {
+                if (data.success) {
+                    // Redirect to the unique result page URL
+                    window.location.href = data.url;
+                } else {
+                    alert('Failed to generate result.');
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('Unable to load the result.');
+            });
     });
 });

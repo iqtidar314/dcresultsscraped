@@ -11,11 +11,35 @@ app.use(express.static(path.join(__dirname, 'public'), {
 }));
 // Mock database: Exam names mapped to embed links
 const examData = {
-    "class-11_2024-2025_CT-1": "https://1drv.ms/x/c/ef87fe212c714713/IQRWrKoZOtZAQaldW4hD4-nXAed55g1lIK36hs3qHGTurFk",
-    "class-12_2024-2025_Final": "https://docs.google.com/spreadsheets/d/e/YOUR_PUBLIC_LINK_2/pubhtml?widget=true&headers=false",
-    "midterm_2023": "https://docs.google.com/spreadsheets/d/e/YOUR_PUBLIC_LINK_3/pubhtml?widget=true&headers=false",
-    "Class Test 1 1st Year HSC - Business Studies 2024-2025": "https://workdrive.zohopublic.com/embed/ulwlaba665df28f024dfca870efa44a725a44?toolbar=false&appearance=light&themecolor=green"
+    //science 2024-25
+    "CT-1_HSC-1st Year-Science_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQSz-6lGaqu3SbM8O6cgQlWTAUjO40gSqlW2XDnjuWXBqd4",
+    "SE_HSC-1st Year-Science_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQR_pkv0hWwiTLAP2-QqyUDGAWN6Unsjin9qSRZCRxrgstc",
+    "Half Yearly_HSC-1st Year-Science_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQR_FmFsTMoYR78CqDQJ3r1DAQVSQs9qDK0zTzNe6iR1yYM",
+    "CT-2_HSC-1st Year-Science_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQQPdWl2tI5DRpq5NWQgZsHtAQy81cPXng4il2jKfh26fI8",
+    "Year Final_HSC-1st Year-Science_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQTQG7k72ajySq3mAakm76JEAeU-vt9jnu_HXGI9aAnBsAc",
+    //business 24-25
+    "CT-1_HSC-1st Year-Business Studies_2024-2025": "https://1drv.ms/x/c/ef87fe212c714713/IQTs0dkSAXonQL7pPOhSZuOsAWD32qD3N5mKG6ZQArsas9Y",
+    "SE_HSC-1st Year-Business Studies_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQS8uPl25LvES7GtdQ1Vj0ynAS1jjMglVzfrzb2jKyj-29E",
+    "Half Yearly_HSC-1st Year-Business Studies_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQTNIASQ4ghnTYwDHJhnVbCzAdHLaw7vaHWo_6OBnGZL0hM",
+    "CT-2_HSC-1st Year-Business Studies_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQTtJ2HSUwtCTLaDpblvUpaWAXWKHP3IAqiejkQu55622cY",
+    "Year Final Exam_HSC-1st Year-Business Studies_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQSt41rcBHGjR6-ICUWwF2TMAQPPBsRPrvvs5hn_Z5Y3QqM",
+    //huamanities 24-25
+    "CT-1_HSC-1st Year-Humanites_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQQpqj_tXN42QKtrOcDSJrbEAX5qnCFCiRmCNPbsL582HsE",
+    "SE_HSC-1st Year-Humanites_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQS8XIaxcMFKRZxgIvjQXETmAUWgfgtrJ05Qg1_FcryfAHw",
+    "Half Yearly_HSC-1st Year-Humanites_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQRgBSN9Mm4GTaYiegDwypVbAeQYEqfTW9BdeRGpmcPP6bA",
+    "CT-2_HSC-1st Year-Humanites_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQSVyt0WaoisSroy16ZKDWFqAaEImXHYA1HMErXBdThVJCY",
+    "Year Final_HSC-1st Year-Humanites_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQT_HS0I9T83TpBFKy8i6CBxAZsLYkE6JfvQt7GLsRheY7k",
+    //23-24
+    "Test Exam _HSC-1st Year-Science_2023-2024":"https://1drv.ms/x/c/ef87fe212c714713/IQSfvJ4omDDZR7GC7XSR35yWARvfh0-MEEBrpAoCRsSts-s",
+    "Test Exam _HSC-1st Year-Business Studies_2023-2024":"https://1drv.ms/x/c/ef87fe212c714713/IQRRBqKACvguSa__NUr_mrLPAY9c40Ji16fz5IfrPRi8keI",
+    "Test Exam _HSC-1st Year-Humanites_2023-2024":"https://1drv.ms/x/c/ef87fe212c714713/IQSp1qlI821hT7Z2g4-zcotLAeQYRHbWSMKd5xxJxNPzI84",
+
+
+
 };
+//to add more link
+        //    "":"",
+
 // Route to dynamically generate a result page
 app.post('/get-result', (req, res) => {
     const { examName, password } = req.body;

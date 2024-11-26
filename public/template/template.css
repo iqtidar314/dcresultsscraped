@@ -1,197 +1,294 @@
-/* Background Styling */
+/* Background styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    width: 95%; /* Set body width to 95% of the screen */
-    max-width: 1200px; /* Optional: Add max-width if you want to limit the maximum width */
-    margin: 0 auto; /* Centers content horizontally */
-    background: linear-gradient(135deg, #020024, #090979, #00d4ff); /* Your existing background gradient */
-    color: #fff; /* Ensure text remains readable */
-    padding-top: 2rem; /* Adjust space from top */
-    display: flex;
-    justify-content: center; /* Centers the child elements horizontally */
-    align-items: flex-start; /* Aligns content to the top */
-    flex-direction: column; /* Stack content vertically */
-  }
-  /* Header Styling */
-  .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1rem 0;
-    text-align: center;
-  }
-  
-  .logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .logo {
-    height: 120px;
-    margin-right: 10px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  /* Stack content vertically */
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+  /* Ensures footer stays at bottom */
+  align-items: center;
+  min-height: 100vh;
+  /* Ensures body takes full height */
+  font-family: Arial, sans-serif;
+  padding-top: 2rem;
+  /* Add some space at the top */
+  background: linear-gradient(135deg, #020024, #090979, #00d4ff);
+  /* Futuristic gradient */
+  color: #fff;
+  /* Ensures contrast for text */
+  overflow-x: hidden;
+  /* Prevent horizontal scroll */
+  box-sizing: border-box;
+  /* Include padding in width/height calculations */
+}
+
+/* Prevent blue background overflow */
+html {
+  overflow-x: hidden;
+}
+
+/* Header Styling (Logo and College Name) */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  /* Ensure padding doesn't cause overflow */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.logo {
+  height: 100px;
+  margin-right: 12px;
+  margin-left:20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #007BFF;
+}
+
+h2{
+  font-size: 2rem;
+  font-weight: bold;
+  color: #c9cdff;
+  margin-bottom: 1rem;
+  word-wrap: break-word;
+  /* Break long words to fit */
+  text-align: center;
+  /* Center align text */
+}
+
+
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+
+/* Button styling */
+.fancy-btn {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(90deg, #0093E9, #80D0C7);
+  /* Futuristic button gradient */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 147, 233, 0.4);
+  /* Button shadow */
+}
+
+.fancy-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 147, 233, 0.6);
+  /* Enhance shadow on hover */
+}
+
+/* Responsive design */
+@media (max-width: 400px) {
+
+
   header h1 {
-    font-size: 2rem;
-    color: #007BFF;
+      font-size: 2rem;
+      /* Adjust header size */
   }
+
   
-  .college-name {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #c9cdff;
-  }
-  
-  /* Exam Name */
-  .exam-name {
-    text-align: center;
-    margin: 1rem 0;
-  }
-  
-  .exam-name h1 {
-    color: #00d4ff;
-    font-size: 1.8rem;
-  }
-  
-  /* Instructions Button */
-  .instructions-button {
-    text-align: center;
-    margin: 1rem 0;
-  }
-  
-  .instructions-button .fancy-btn {
-    background: linear-gradient(90deg, #0093E9, #80D0C7); /* Match button style */
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #fff;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 147, 233, 0.4);
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .instructions-button .fancy-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 147, 233, 0.6);
-  }
-  
-  /* Embedded Excel */
-  .excel-container {
-    width: 100%;
-    height: 85vh; /* 95% of viewport height */
-    margin: 1rem 0;
-  }
-  
-  .excel-frame {
-    width: 100%;
-    height: 100%;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-  }
-  
-  
-/* Modal Instructions */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Modal Content (Dark Mode) */
-  .modal-content {
-    background: linear-gradient(
-      135deg,
-      rgba(30, 30, 30, 0.9) 0%, /* Dark gray with slight transparency */
-      rgba(50, 50, 50, 0.9) 100% /* Slightly darker gray */
-    ); /* Dark gradient for deep, rich look */
-    color: #e0e0e0; /* Light gray text for readability */
-    padding: 20px;
-    border-radius: 15px;
-    width: 60%;
-    text-align: center;
-    position: relative; /* For proper positioning of the close button */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Deep shadow for a floating effect */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animations */
-    transform: scale(0.9); /* Default scale for animation effect */
-    opacity: 0; /* Initially hidden */
-    animation: fadeInScale 0.3s forwards; /* Trigger fade and scale animation */
-  }
-  
-  /* Keyframe animation for fade-in and scale */
-  @keyframes fadeInScale {
-    to {
-      transform: scale(1); /* Grow to normal size */
-      opacity: 1; /* Become fully visible */
-    }
-  }
-  
-  /* Heading Styling */
-  .modal-content h2 {
-    margin-bottom: 15px;
-    color: #00d4ff; /* Bright electric blue for contrast */
-  }
-  
-  /* List Styling */
-  .modal-content ul {
-    text-align: left;
-    color: #ccc; /* Light gray text for list items */
-    font-size: 1.1rem; /* Slightly larger text for better readability */
-  }
-  
-  .modal-content li {
-    margin-bottom: 10px;
-  }
-  
-  .modal-content li:before {
-    content: '✓'; /* Add checkmarks for list items */
-    color: #00d4ff; /* Accent color to match heading */
-    margin-right: 10px;
-  }
-  
-  /* Close Button Styling */
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 1.5rem;
-    color: #fff; /* White color for the close button */
-    cursor: pointer;
-    background: none;
-    border: none;
-  }
-  
-  .close-btn:hover {
-    color: #f44336; /* Red color on hover for close button */
-  }
-  
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 1.5rem;
-    color: #fff;
-    cursor: pointer;
-  }
-  /* Footer Section (Introduction) */
+
+  h2 {
+      font-size: 1.5rem;
+      /* Adjust form title size */
+ 
+}
+}
+
+/* Style the dropdown options */
+select option {
+  color: #000;
+  /* Dark font color for better contrast */
+  background-color: #fff;
+  /* Light background for contrast */
+}
+
 .footer {
-    margin-top: 3rem;
-    font-size: 1rem;
-    text-align: center;
-    color: #777;
+  margin-top: 0rem;
+  font-size: 0.75rem;
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+  background: linear-gradient(180deg, #001a5b, #00081e);
+  /* Darker gradient effect */
+  width: 100%;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+  /* Subtle shadow above the footer */
 }
 
 .footer p {
-    margin: 0.5rem 0;
+  margin: 0.5rem 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* Instructions Button */
+.instructions-button {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.instructions-button .fancy-btn {
+  background: linear-gradient(90deg, #0093E9, #80D0C7); /* Match button style */
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 147, 233, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+
+.instructions-button .fancy-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 147, 233, 0.6);
+}
+
+/* Embedded Excel */
+.excel-container {
+  width: 98%;
+  height: 92vh; /* 95% of viewport height */
+  margin: 1rem 0;
+}
+
+
+.excel-frame {
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+
+/* Modal Instructions */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content (Dark Mode) */
+.modal-content {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 30, 30, 0.9) 0%, /* Dark gray with slight transparency */
+    rgba(50, 50, 50, 0.9) 100% /* Slightly darker gray */
+  ); /* Dark gradient for deep, rich look */
+  color: #e0e0e0; /* Light gray text for readability */
+  padding: 20px;
+  border-radius: 15px;
+  width: 60%;
+  text-align: center;
+  position: relative; /* For proper positioning of the close button */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Deep shadow for a floating effect */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animations */
+  transform: scale(0.9); /* Default scale for animation effect */
+  opacity: 0; /* Initially hidden */
+  animation: fadeInScale 0.3s forwards; /* Trigger fade and scale animation */
+}
+
+/* Keyframe animation for fade-in and scale */
+@keyframes fadeInScale {
+  to {
+    transform: scale(1); /* Grow to normal size */
+    opacity: 1; /* Become fully visible */
+  }
+}
+
+/* Heading Styling */
+.modal-content h2 {
+  margin-bottom: 15px;
+  color: #00d4ff; /* Bright electric blue for contrast */
+}
+
+/* List Styling */
+.modal-content ul {
+  text-align: left;
+  color: #ccc; /* Light gray text for list items */
+  font-size: 1.1rem; /* Slightly larger text for better readability */
+}
+
+.modal-content li {
+  margin-bottom: 10px;
+}
+
+.modal-content li:before {
+  content: '✓'; /* Add checkmarks for list items */
+  color: #00d4ff; /* Accent color to match heading */
+  margin-right: 10px;
+}
+
+/* Close Button Styling */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5rem;
+  color: #fff; /* White color for the close button */
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.close-btn:hover {
+  color: #f44336; /* Red color on hover for close button */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+@media (max-width: 400px) {
+
+  .excel-container{
+      height:87vh;
+  }
+  

@@ -1,22 +1,32 @@
 /* Background styling */
 body {
     display: flex;
+    flex-direction: column;
+    /* Stack content vertically */
     margin: 0;
     padding: 0;
-    justify-content: center;
+    justify-content: space-between;
+    /* Ensures footer stays at bottom */
     align-items: center;
-    height: 100vh;
-    flex-direction: column; /* Stack content vertically */
-    margin: 0;
-    align-items: center;
-    justify-content: flex-start; /* Align items at the top */
-    display: flex;
+    min-height: 100vh;
+    /* Ensures body takes full height */
     font-family: Arial, sans-serif;
-    padding-top: 2rem; /* Add some space at the top */
-    background: linear-gradient(135deg, #020024, #090979, #00d4ff); /* Futuristic gradient */
-    color: #fff; /* Ensures contrast for text */
+    padding-top: 2rem;
+    /* Add some space at the top */
+    background: linear-gradient(135deg, #020024, #090979, #00d4ff);
+    /* Futuristic gradient */
+    color: #fff;
+    /* Ensures contrast for text */
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
+    box-sizing: border-box;
+    /* Include padding in width/height calculations */
 }
 
+/* Prevent blue background overflow */
+html {
+    overflow-x: hidden;
+}
 
 /* Header Styling (Logo and College Name) */
 .header {
@@ -25,6 +35,9 @@ body {
     align-items: center;
     margin-top: 1rem;
     text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    /* Ensure padding doesn't cause overflow */
 }
 
 .logo-container {
@@ -35,42 +48,53 @@ body {
 }
 
 .logo {
-    height: 120px;
-    margin-right: 5px;
+    height: 100px;
+    margin-right: 12px;
+    margin-left:20px;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 3rem;
     color: #007BFF;
 }
 
 .college-name {
-    font-size: 1.4rem;
+    font-size: 2rem;
     font-weight: bold;
     color: #c9cdff;
     margin-bottom: 1rem;
+    word-wrap: break-word;
+    /* Break long words to fit */
+    text-align: center;
+    /* Center align text */
 }
-
 
 /* Form container styling */
 .form-container {
-    background: rgba(255, 255, 255, 0.1); /* Translucent white */
-    backdrop-filter: blur(10px); /* Glassmorphism effect */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Border for contrast */
+    background: rgba(255, 255, 255, 0.1);
+    /* Translucent white */
+    backdrop-filter: blur(10px);
+    /* Glassmorphism effect */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* Border for contrast */
     border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37); /* Depth effect */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    /* Depth effect */
     padding: 2rem;
     width: 90%;
     max-width: 400px;
     text-align: center;
+    box-sizing: border-box;
+    /* Ensure padding doesn't cause overflow */
 }
 
 /* Header styling */
 h1 {
     margin-bottom: 1rem;
     font-size: 1.8rem;
-    color: #00d4ff; /* Accent color */
+    color: #00d4ff;
+    /* Accent color */
 }
 
 /* Form group styling */
@@ -83,34 +107,33 @@ label {
     display: block;
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
-    color: select {
-        color: #000; /* Default font color for selected text */
-    }
-    
-    /* Style the dropdown options */
-    select option {
-        color: #000; /* Dark font color for better contrast */
-        background-color: #fff; /* Light background for contrast */
-    }
-    #6b8cb6; /* Softer white */
+    color: #6b8cb6;
+    /* Softer white */
 }
 
-select, input {
+select,
+input {
     width: 100%;
     padding: 0.7rem;
     font-size: 0.9rem;
-    color: #ffffff; /* Text color */
-    background: rgba(255, 255, 255, 0.2); /* Semi-transparent input background */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    color: #ffffff;
+    /* Text color */
+    background: rgba(255, 255, 255, 0.2);
+    /* Semi-transparent input background */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* Subtle border */
     border-radius: 5px;
     outline: none;
     transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
 /* Focus effects for inputs */
-select:focus, input:focus {
+select:focus,
+input:focus {
     border: 1px solid #00d4ff;
-    box-shadow: 0 0 5px #00d4ff; /* Glow on focus */
+    box-shadow: 0 0 5px #00d4ff;
+    /* Glow on focus */
 }
 
 /* Button styling */
@@ -121,48 +144,67 @@ select:focus, input:focus {
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
-    background: linear-gradient(90deg, #0093E9, #80D0C7); /* Futuristic button gradient */
+    background: linear-gradient(90deg, #0093E9, #80D0C7);
+    /* Futuristic button gradient */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 10px rgba(0, 147, 233, 0.4); /* Button shadow */
+    box-shadow: 0 4px 10px rgba(0, 147, 233, 0.4);
+    /* Button shadow */
 }
 
 .fancy-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 147, 233, 0.6); /* Enhance shadow on hover */
+    box-shadow: 0 6px 15px rgba(0, 147, 233, 0.6);
+    /* Enhance shadow on hover */
 }
 
 /* Responsive design */
-@media (max-width: 480px) {
+@media (max-width: 400px) {
     .form-container {
-        width: 90%;
+        width: 100%;
+        /* Ensure it adapts to small screen */
         padding: 1.5rem;
     }
-}
-select {
-    color: #ffffff; /* Default font color for selected text */
+
+    header h1 {
+        font-size: 2.5rem;
+        /* Adjust header size */
+    }
+
+    .college-name {
+        font-size: 1.75rem;
+        /* Scale down college name */
+    }
+
+    h1 {
+        font-size: 2rem;
+        /* Adjust form title size */
+    }
 }
 
 /* Style the dropdown options */
 select option {
-    color: #000; /* Dark font color for better contrast */
-    background-color: #fff; /* Light background for contrast */
+    color: #000;
+    /* Dark font color for better contrast */
+    background-color: #fff;
+    /* Light background for contrast */
 }
 
-/* Footer Section (Introduction) */
 .footer {
-    margin-top: 3rem;
-    font-size: 1rem;
+    margin-top: 01rem;
+    font-size: 0.75rem;
     text-align: center;
-    color: #777;
+    color: #fff;
+    padding: 2rem;
+    background: linear-gradient(180deg, #001a5b, #00081e);
+    /* Darker gradient effect */
+    width: 100%;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+    /* Subtle shadow above the footer */
 }
 
 .footer p {
     margin: 0.5rem 0;
 }
-
-
-
-
