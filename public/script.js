@@ -2,11 +2,19 @@ const examMapping = {
     "HSC": {
         "Science": {
             "2023-2024": ["Test Exam _HSC-1st Year-Science_2023-2024"],
+<<<<<<< HEAD
             "2024-2025": ["CT-1_HSC-1st Year-Science_2024-2025", "SE_HSC-1st Year-Science_2024-2025", "Half Yearly_HSC-1st Year-Science_2024-2025", "CT-2_HSC-1st Year-Science_2024-2025", "Year Final_HSC-1st Year-Science_2024-2025"],
         },
         "Business Studies": {
             "2023-2024": ["Test Exam _HSC-1st Year-Business Studies_2023-2024"],
             "2024-2025": ["CT-1_HSC-1st Year-Business Studies_2024-2025", "SE_HSC-1st Year-Business Studies_2024-2025", "Half Yearly_HSC-1st Year-Business Studies_2024-2025", "CT-2_HSC-1st Year-Business Studies_2024-2025", "Year Final Exam_HSC-1st Year-Business Studies_2024-2025"]
+=======
+            "2024-2025": ["CT-1_HSC-1st Year-Science_2024-2025", "SE_HSC-1st Year-Science_2024-2025","Half Yearly_HSC-1st Year-Science_2024-2025","CT-2_HSC-1st Year-Science_2024-2025","Year Final_HSC-1st Year-Science_2024-2025"],
+        },
+        "Business Studies": {
+            "2023-2024": ["Test Exam _HSC-1st Year-Business Studies_2023-2024"],
+            "2024-2025": ["CT-1_HSC-1st Year-Business Studies_2024-2025","SE_HSC-1st Year-Business Studies_2024-2025","Half Yearly_HSC-1st Year-Business Studies_2024-2025","CT-2_HSC-1st Year-Business Studies_2024-2025","Year Final Exam_HSC-1st Year-Business Studies_2024-2025"]
+>>>>>>> origin/main
         },
         "Humanities": {
             "2023-2024": ["Test Exam _HSC-1st Year-Humanites_2023-2024"],
