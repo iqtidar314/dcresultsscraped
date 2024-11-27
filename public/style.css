@@ -102,6 +102,12 @@ h1 {
     margin-bottom: 1.2rem;
     text-align: left;
 }
+.password-and-instruction {
+     display: flex;
+    align-items: center;
+    gap: 10px; /* Adds some space between label and button */
+    
+}
 
 label {
     display: block;
@@ -207,4 +213,123 @@ select option {
 
 .footer p {
     margin: 0.5rem 0;
+}
+
+
+
+
+
+/* Instructions Button */
+.instructions-button {
+  text-align: center;
+  margin: 1rem 0;
+   position: relative;
+    bottom: 2px; /* Adjusts the button slightly upward */
+  max-width:1rem;
+}
+
+.instructions-button .fancy-btn {
+    width: 22.5px;
+    height: 22.5px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.instructions-button .fancy-btn:hover {
+  transform: translateY(-3px) 
+  color:#f4433;
+
+}
+
+/* Modal Instructions */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content (Dark Mode) */
+.modal-content {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 30, 30, 0.9) 0%, /* Dark gray with slight transparency */
+    rgba(50, 50, 50, 0.9) 100% /* Slightly darker gray */
+  ); /* Dark gradient for deep, rich look */
+  color: #e0e0e0; /* Light gray text for readability */
+  padding: 20px;
+  border-radius: 15px;
+  width: 60%;
+  text-align: center;
+  position: relative; /* For proper positioning of the close button */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Deep shadow for a floating effect */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animations */
+  transform: scale(0.9); /* Default scale for animation effect */
+  opacity: 0; /* Initially hidden */
+  animation: fadeInScale 0.3s forwards; /* Trigger fade and scale animation */
+}
+
+/* Keyframe animation for fade-in and scale */
+@keyframes fadeInScale {
+  to {
+    transform: scale(1); /* Grow to normal size */
+    opacity: 1; /* Become fully visible */
+  }
+}
+
+/* Heading Styling */
+.modal-content h2 {
+  margin-bottom: 15px;
+  color: #00d4ff; /* Bright electric blue for contrast */
+}
+
+/* List Styling */
+.modal-content ul {
+  text-align: left;
+  color: #ccc; /* Light gray text for list items */
+  font-size: 1.1rem; /* Slightly larger text for better readability */
+}
+
+.modal-content li {
+  margin-bottom: 10px;
+}
+
+.modal-content li:before {
+  content: '✓'; /* Add checkmarks for list items */
+  color: #00d4ff; /* Accent color to match heading */
+  margin-right: 10px;
+}
+
+/* Close Button Styling */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5rem;
+  color: #fff; /* White color for the close button */
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.close-btn:hover {
+  color: #f44336; /* Red color on hover for close button */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
 }

@@ -1,20 +1,28 @@
-const examMapping = {
+/*= {
     "HSC": {
         "Science": {
             "2023-2024": ["Test Exam _HSC-1st Year-Science_2023-2024"],
-<<<<<<< HEAD
-            "2024-2025": ["CT-1_HSC-1st Year-Science_2024-2025", "SE_HSC-1st Year-Science_2024-2025", "Half Yearly_HSC-1st Year-Science_2024-2025", "CT-2_HSC-1st Year-Science_2024-2025", "Year Final_HSC-1st Year-Science_2024-2025"],
-        },
-        "Business Studies": {
-            "2023-2024": ["Test Exam _HSC-1st Year-Business Studies_2023-2024"],
-            "2024-2025": ["CT-1_HSC-1st Year-Business Studies_2024-2025", "SE_HSC-1st Year-Business Studies_2024-2025", "Half Yearly_HSC-1st Year-Business Studies_2024-2025", "CT-2_HSC-1st Year-Business Studies_2024-2025", "Year Final Exam_HSC-1st Year-Business Studies_2024-2025"]
-=======
             "2024-2025": ["CT-1_HSC-1st Year-Science_2024-2025", "SE_HSC-1st Year-Science_2024-2025","Half Yearly_HSC-1st Year-Science_2024-2025","CT-2_HSC-1st Year-Science_2024-2025","Year Final_HSC-1st Year-Science_2024-2025"],
         },
         "Business Studies": {
             "2023-2024": ["Test Exam _HSC-1st Year-Business Studies_2023-2024"],
             "2024-2025": ["CT-1_HSC-1st Year-Business Studies_2024-2025","SE_HSC-1st Year-Business Studies_2024-2025","Half Yearly_HSC-1st Year-Business Studies_2024-2025","CT-2_HSC-1st Year-Business Studies_2024-2025","Year Final Exam_HSC-1st Year-Business Studies_2024-2025"]
->>>>>>> origin/main
+        },
+        "Humanities": {
+            "2023-2024": ["Test Exam _HSC-1st Year-Humanites_2023-2024"],
+            "2024-2025": ["CT-1_HSC-1st Year-Humanites_2024-2025", "SE_HSC-1st Year-Humanites_2024-2025", "Half Yearly_HSC-1st Year-Humanites_2024-2025", "CT-2_HSC-1st Year-Humanites_2024-2025", "Year Final_HSC-1st Year-Humanites_2024-2025"]
+        }
+    }
+};*/
+const examMapping = {
+    "HSC": {
+        "Science": {
+            "2023-2024": ["Test Exam _HSC-1st Year-Science_2023-2024"],
+            "2024-2025": ["CT-1_HSC-1st Year-Science_2024-2025", "SE_HSC-1st Year-Science_2024-2025","Half Yearly_HSC-1st Year-Science_2024-2025","CT-2_HSC-1st Year-Science_2024-2025","Year Final_HSC-1st Year-Science_2024-2025"],
+        },
+        "Business Studies": {
+            "2023-2024": ["Test Exam _HSC-1st Year-Business Studies_2023-2024"],
+            "2024-2025": ["CT-1_HSC-1st Year-Business Studies_2024-2025","SE_HSC-1st Year-Business Studies_2024-2025","Half Yearly_HSC-1st Year-Business Studies_2024-2025","CT-2_HSC-1st Year-Business Studies_2024-2025","Year Final Exam_HSC-1st Year-Business Studies_2024-2025"]
         },
         "Humanities": {
             "2023-2024": ["Test Exam _HSC-1st Year-Humanites_2023-2024"],
@@ -41,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Validate selections before accessing examMapping
         if (examLevel && group && session) {
-            const exams = examMapping[examLevel] ? . [group] ? . [session] || [];
+            const exams = examMapping[examLevel]?.[group]?.[session] || [];
 
             // Populate the exam dropdown
             exams.forEach((exam) => {
@@ -69,32 +77,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         // Send the selected exam and password to the backend
         fetch('/get-result', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    examName: selectedExam,
-                    password: password,
-                }),
-            })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Failed to fetch result');
-                }
-                return response.json();
-            })
-            .then((data) => {
-                if (data.success) {
-                    // Redirect to the unique result page URL
-                    window.location.href = data.url;
-                } else {
-                    alert('Failed to generate result.');
-                }
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-                alert('Unable to load the result.');
-            });
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                examName: selectedExam,
+                password: password,
+            }),
+        })
+        .then((response) => {
+            if (!response.ok) {
+                // If response is not ok, read the error message from the response body
+                return response.text().then((errorText) => {
+                    throw new Error(errorText);  // Throw error with the message from the backend
+                });
+            }
+            return response.json();  // Parse the successful response as JSON
+        })
+        
+        .then((data) => {
+            if (data.success) {
+                // Redirect to the unique result page URL
+                window.location.href = data.url;
+            } else {
+                alert('Failed to generate result.');
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            alert('Unable to load the result/ Invalid Password enter');
+        });
     });
 });
