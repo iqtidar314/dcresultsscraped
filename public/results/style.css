@@ -1,0 +1,685 @@
+/* Background styling */
+
+
+/* Form container styling */
+.form-container {
+    background: rgba(255, 255, 255, 0.1);
+    /* Translucent white */
+    backdrop-filter: blur(10px);
+    /* Glassmorphism effect */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* Border for contrast */
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    /* Depth effect */
+    padding: 2rem;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-sizing: border-box;
+    /* Ensure padding doesn't cause overflow */
+}
+
+/* Header Styling (Logo and College Name) */
+.college{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    /* Ensure padding doesn't cause overflow */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.logo {
+    height: 100px;
+    margin-right: 12px;
+    margin-left:20px;
+}
+
+.college h1{
+    margin: 0;
+    font-size: 3rem;
+    color: #007BFF;
+}
+/* Header styling */
+.form-container h1 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    color: #00d4ff;
+    /* Accent color */
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 1.2rem;
+    text-align: left;
+}
+.password-and-instruction {
+     display: flex;
+    align-items: center;
+    gap: 10px; /* Adds some space between label and button */
+    
+}
+
+label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: #6b8cb6;
+    /* Softer white */
+}
+
+select,
+input {
+    width: 100%;
+    padding: 0.7rem;
+    font-size: 0.9rem;
+    color: #ffffff;
+    /* Text color */
+    background: rgba(255, 255, 255, 0.2);
+    /* Semi-transparent input background */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* Subtle border */
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Focus effects for inputs */
+select:focus,
+input:focus {
+    border: 1px solid #00d4ff;
+    box-shadow: 0 0 5px #00d4ff;
+    /* Glow on focus */
+}
+
+/* Button styling */
+.fancy-btn {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(90deg, #0093E9, #80D0C7);
+    /* Futuristic button gradient */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 147, 233, 0.4);
+    /* Button shadow */
+}
+
+.fancy-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 147, 233, 0.6);
+    /* Enhance shadow on hover */
+}
+
+/* Responsive design */
+@media (max-width: 350px) {
+    .form-container {
+        width: 95%;
+        /* Ensure it adapts to small screen */
+        padding: 1.5rem;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+        /* Adjust header size */
+    }
+
+    .college-name {
+        font-size: 1.75rem;
+        /* Scale down college name */
+    }
+
+    h1 {
+        font-size: 2rem;
+        /* Adjust form title size */
+    }
+}
+
+/* Style the dropdown options */
+select option {
+    color: #000;
+    /* Dark font color for better contrast */
+    background-color: #fff;
+    /* Light background for contrast */
+}
+
+
+
+
+
+
+/* Instructions Button */
+.instructions-button {
+  text-align: center;
+  margin: 1rem 0;
+   position: relative;
+    bottom: 2px; /* Adjusts the button slightly upward */
+  max-width:1rem;
+}
+
+.instructions-button .fancy-btn {
+    width: 22.5px;
+    height: 22.5px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.instructions-button .fancy-btn:hover {
+  transform: translateY(-3px) 
+ 
+
+}
+
+/* Modal Instructions */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content (Dark Mode) */
+.modal-content {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 30, 30, 0.9) 0%, /* Dark gray with slight transparency */
+    rgba(50, 50, 50, 0.9) 100% /* Slightly darker gray */
+  ); /* Dark gradient for deep, rich look */
+  color: #e0e0e0; /* Light gray text for readability */
+  padding: 20px;
+  border-radius: 15px;
+  width: 60%;
+  text-align: center;
+  position: relative; /* For proper positioning of the close button */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Deep shadow for a floating effect */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animations */
+  transform: scale(0.9); /* Default scale for animation effect */
+  opacity: 0; /* Initially hidden */
+  animation: fadeInScale 0.3s forwards; /* Trigger fade and scale animation */
+}
+
+/* Keyframe animation for fade-in and scale */
+@keyframes fadeInScale {
+  to {
+    transform: scale(1); /* Grow to normal size */
+    opacity: 1; /* Become fully visible */
+  }
+}
+
+/* Heading Styling */
+.modal-content h2 {
+  margin-bottom: 15px;
+  color: #00d4ff; /* Bright electric blue for contrast */
+}
+
+/* List Styling */
+.modal-content ul {
+  text-align: left;
+  color: #ccc; /* Light gray text for list items */
+  font-size: 1.1rem; /* Slightly larger text for better readability */
+}
+
+.modal-content li {
+  margin-bottom: 10px;
+}
+
+.modal-content li:before {
+  content: '✓'; /* Add checkmarks for list items */
+  color: #00d4ff; /* Accent color to match heading */
+  margin-right: 10px;
+}
+
+/* Close Button Styling */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5rem;
+  color: #fff; /* White color for the close button */
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.close-btn:hover {
+  color: #f44336; /* Red color on hover for close button */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Importing Google font - Open Sans */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+    height:100%;
+  width: 100%;
+  background: linear-gradient(to bottom, #175d69 23%, #330c43 95%);
+   overflow-y: auto;       /* Allow vertical scrolling */
+   min-height: 100vh;
+   justify-content: space-between;
+   align-items: center;
+   flex-direction: column;
+   display: flex;
+   /* Stack content vertically *
+}body {
+    display: flex;
+    flex-direction: column;
+    /* Stack content vertically */
+
+    box-sizing: border-box;
+    /* Include padding in width/height calculations */
+}
+
+
+
+
+.header {
+  position: sticky; /* or fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  z-index: 1000;
+  
+  
+
+  height: 70px; /* Adjust as per your header height */
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 15px;
+}
+
+.navbar .logo a {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar .links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 35px;
+}
+
+.navbar .links a {
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 0;
+  transition: 0.2s ease;
+}
+
+.navbar .links a:hover {
+  color: #47b2e4;
+}
+
+.navbar .buttons a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 15px 0;
+  transition: 0.2s ease;
+}
+
+.navbar .buttons a:not(:last-child) {
+  margin-right: 30px;
+}
+
+.navbar .buttons .signin:hover {
+  color: #47b2e4;
+}
+
+.navbar .buttons .signup {
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  border-radius: 0.375rem;
+  text-align: center;
+  transition: 0.2s ease;
+}
+
+.navbar .buttons .signup:hover {
+  background-color: #47b2e4;
+  color: #fff;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: flex-start; /* Align content to the top */
+  align-items: flex-start; /* Do not center vertically */
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: auto; /* Allow the section to grow */
+  height: auto; /* Respect content size */
+  flex-grow: 1; /* Allow this section to take up available space */
+}
+
+.hero-section .hero {
+  max-width: 50%;
+  color: #fff;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #c9c7c7;
+}
+
+.hero-section .img img {
+  width: 517px;
+}
+
+.hero-section .buttons {
+  margin-top: 40px;
+}
+
+.hero-section .buttons a {
+  text-decoration: none;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+  display: inline-block;
+}
+
+.hero-section .buttons a:not(:last-child) {
+  margin-right: 15px;
+}
+
+.buttons .join {
+  background-color: #47b2e4;
+}
+
+.hero-section .buttons .learn {
+  border: 1px solid #fff;
+  border-radius: 0.375rem;
+}
+
+.hero-section .buttons a:hover {
+  background-color: #47b2e4;
+}
+
+/* Hamburger menu styles */
+#menu-toggle {
+  display: none;
+}
+
+#hamburger-btn {
+  font-size:10rem;
+  color: #fff;
+  cursor: pointer;
+  position: fixed;
+  right:1.2rem;
+  top:-6.4rem;
+
+  
+  order: 1;
+
+}
+
+@media screen and (max-width: 20000px) {
+  .navbar .logo a {
+    font-size: 1.5rem;
+  }
+
+  .links {
+    position: fixed;
+    left: -100%;
+    top: 75px;
+    width: 100%;
+    height: 100vh;
+    padding-top: 50px;
+    background: #175d69;
+    flex-direction: column;
+    transition: 0.3s ease;
+  }
+
+  .navbar #menu-toggle:checked ~ .links {
+    left: 0;
+    
+  }
+
+  .navbar #hamburger-btn {
+    display: block;
+  }
+
+  .header .buttons {
+    display: none;
+  }
+
+  .hero-section .hero {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-section img {
+    display: none;
+    
+  }
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+  text-decoration: none;
+}
+footer{
+  width: 100%;
+
+  bottom: 0;
+  left: 0;
+  background: #111;
+    position: relative; /* Allow footer to flow with content */
+
+}
+footer .content{
+  max-width: 1350px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+footer .content p,a{
+  color: #fff;
+}
+footer .content .box{
+  width: 33%;
+  transition: all 0.4s ease;
+}
+footer .content .topic{
+  font-size: 22px;
+  font-weight: 600;
+  color: #2f9ed5;
+  margin-bottom: 16px;
+}
+footer .content p{
+  text-align: justify;
+}
+footer .upper a{
+  color: #eb2f06;
+}
+footer .content .lower .topic{
+  margin: 24px 0 5px 0;
+}
+footer .content .lower i{
+  padding-right: 16px;
+}
+footer .content .left .lower a{
+    line-height: 32px;
+}
+footer .content .middle{
+  padding-left: 80px;
+}
+footer .content .middle a{
+  line-height: 32px;
+}
+footer .content .right input[type="text"]{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  color: #d9d9d9;
+  background: #000;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 17px;
+  border: 2px solid #222222;
+}
+footer .content .right input[type="submit"]{
+  height: 42px;
+  width: 100%;
+  font-size: 18px;
+  color: #d9d9d9;
+  background: #eb2f06;
+  outline: none;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 12px;
+  border: 2px solid #eb2f06;
+  transition: all 0.3s ease-in-out;
+}
+.content .right input[type="submit"]:hover{
+  background: none;
+  color:  #eb2f06;
+}
+footer .content .media-icons a{
+  font-size: 16px;
+  height: 45px;
+  width: 45px;
+  display: inline-block;
+  text-align: center;
+  line-height: 43px;
+  border-radius: 5px;
+  border: 2px solid #222222;
+  margin: 30px 5px 0 0;
+  margin-top:2px;
+  transition: all 0.3s ease;
+}
+.content .media-icons a:hover{
+  border-color: #eb2f06;
+}
+footer .bottom{
+  width: 100%;
+  text-align: center;
+  color: #d9d9d9;
+  padding: 0 40px 5px 0;
+}
+footer .bottom a{
+  color: #eb2f06;
+}
+footer a{
+  transition: all 0.3s ease;
+}
+footer a:hover{
+  color: #eb2f06;
+}
+@media (max-width:1100px) {
+  footer .content .middle{
+    padding-left: 50px;
+  }
+}
+@media (max-width:950px){
+  footer .content .box{
+    width: 50%;
+  }
+  .content .right{
+    margin-top: 40px;
+  }
+}
+@media (max-width:560px){
+  footer{
+    position: relative;
+  }
+  footer .content .box{
+    width: 100%;
+    margin-top: 30px;
+  }
+  footer .content .middle{
+    padding-left: 0;
+  }
+}
