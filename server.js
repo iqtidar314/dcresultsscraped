@@ -30,9 +30,9 @@ const examData = {
     "CT-2_HSC-1st Year-Humanites_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQSVyt0WaoisSroy16ZKDWFqAaEImXHYA1HMErXBdThVJCY",
     "Year Final_HSC-1st Year-Humanites_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQT_HS0I9T83TpBFKy8i6CBxAZsLYkE6JfvQt7GLsRheY7k",
     //23-24
-    "Test Exam _HSC-2nd Year-Science_2023-2024":"https://1drv.ms/x/c/ef87fe212c714713/IQSfvJ4omDDZR7GC7XSR35yWARvfh0-MEEBrpAoCRsSts-s",
-    "Test Exam _HSC-2nd Year-Business Studies_2023-2024":"https://1drv.ms/x/c/ef87fe212c714713/IQRRBqKACvguSa__NUr_mrLPAY9c40Ji16fz5IfrPRi8keI",
-    "Test Exam _HSC-2nd Year-Humanites_2023-2024":"https://1drv.ms/x/c/ef87fe212c714713/IQSp1qlI821hT7Z2g4-zcotLAeQYRHbWSMKd5xxJxNPzI84",
+    "Test Exam_HSC-2nd Year-Science_2023-2024":"https://1drv.ms/x/c/ef87fe212c714713/IQSfvJ4omDDZR7GC7XSR35yWARvfh0-MEEBrpAoCRsSts-s",
+    "Test Exam_HSC-2nd Year-Business Studies_2023-2024":"https://1drv.ms/x/c/ef87fe212c714713/IQRRBqKACvguSa__NUr_mrLPAY9c40Ji16fz5IfrPRi8keI",
+    "Test Exam_HSC-2nd Year-Humanites_2023-2024":"https://1drv.ms/x/c/ef87fe212c714713/IQSp1qlI821hT7Z2g4-zcotLAeQYRHbWSMKd5xxJxNPzI84",
 
 
 
