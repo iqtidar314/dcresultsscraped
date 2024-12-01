@@ -1,4 +1,7 @@
-
+.adcontainer{
+              height: 100px;  /* Set the height */
+            width: 100%;  /* Full width */
+}
 
 * {
   margin: 0;
@@ -26,6 +29,7 @@ body {
   z-index: 1000;
   
   
+  
 
   height: 75px; /* Adjust as per your header height */
 }
@@ -36,6 +40,7 @@ body {
   background-color: #175d69;
   justify-content: space-between;
   max-width: 100%;
+  display: flex; /* Use flexbox for alignment */
   margin: 0 auto;
   padding: 20px 15px;
 }
