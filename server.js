@@ -23,17 +23,17 @@ const examData = {
     "CT-2_HSC-1st Year-Business Studies_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQTtJ2HSUwtCTLaDpblvUpaWAXWKHP3IAqiejkQu55622cY",
     "Year Final Exam_HSC-1st Year-Business Studies_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQSt41rcBHGjR6-ICUWwF2TMAQPPBsRPrvvs5hn_Z5Y3QqM",
     //huamanities 24-25
-    "CT-1_HSC-1st Year-Humanites_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQQpqj_tXN42QKtrOcDSJrbEAX5qnCFCiRmCNPbsL582HsE",
-    "SE_HSC-1st Year-Humanites_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQS8XIaxcMFKRZxgIvjQXETmAUWgfgtrJ05Qg1_FcryfAHw",
-    "Half Yearly_HSC-1st Year-Humanites_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQRgBSN9Mm4GTaYiegDwypVbAeQYEqfTW9BdeRGpmcPP6bA",
-    "CT-2_HSC-1st Year-Humanites_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQSVyt0WaoisSroy16ZKDWFqAaEImXHYA1HMErXBdThVJCY",
-    "Year Final_HSC-1st Year-Humanites_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQT_HS0I9T83TpBFKy8i6CBxAZsLYkE6JfvQt7GLsRheY7k",
+    "CT-1_HSC-1st Year-Humanities_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQQpqj_tXN42QKtrOcDSJrbEAX5qnCFCiRmCNPbsL582HsE",
+    "SE_HSC-1st Year-Humanities_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQS8XIaxcMFKRZxgIvjQXETmAUWgfgtrJ05Qg1_FcryfAHw",
+    "Half Yearly_HSC-1st Year-Humanities_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQRgBSN9Mm4GTaYiegDwypVbAeQYEqfTW9BdeRGpmcPP6bA",
+    "CT-2_HSC-1st Year-Humanities_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQSVyt0WaoisSroy16ZKDWFqAaEImXHYA1HMErXBdThVJCY",
+    "Year Final_HSC-1st Year-Humanities_2024-2025":"https://1drv.ms/x/c/ef87fe212c714713/IQT_HS0I9T83TpBFKy8i6CBxAZsLYkE6JfvQt7GLsRheY7k",
     //23-24
     "Test Exam_HSC-2nd Year-Science_2023-2024":"https://1drv.ms/x/c/ef87fe212c714713/IQSfvJ4omDDZR7GC7XSR35yWARvfh0-MEEBrpAoCRsSts-s",
     "SE_Exam_HSC-2nd_Year-Science_2023-2024":"https://1drv.ms/x/c/ef87fe212c714713/IQS4aJ0H8czLTITfCH3rmBYvAcnHhwHdxyRctrcdaIiyNuo",
     "Test Exam_HSC-2nd Year-Business Studies_2023-2024":"https://1drv.ms/x/c/ef87fe212c714713/IQRRBqKACvguSa__NUr_mrLPAY9c40Ji16fz5IfrPRi8keI",
     "SE_HSC-2nd_Year-Business_Studies_2023-2024":"https://1drv.ms/x/c/ef87fe212c714713/IQR5hkAhVvrQR4TWzqWhr3DzASOSKXM2Xdc1OZOJUFHfBdE",
-    "Test Exam_HSC-2nd Year-Humanites_2023-2024":"https://1drv.ms/x/c/ef87fe212c714713/IQSp1qlI821hT7Z2g4-zcotLAeQYRHbWSMKd5xxJxNPzI84",
+    "Test Exam_HSC-2nd Year-Humanities_2023-2024":"https://1drv.ms/x/c/ef87fe212c714713/IQSp1qlI821hT7Z2g4-zcotLAeQYRHbWSMKd5xxJxNPzI84",
     "SE_Exam_HSC-2nd_Year-Humanities_2023-2024":"https://1drv.ms/x/c/ef87fe212c714713/IQQwG32AWoK7QbxO_OS8_-93AQ4UmdmMEASh6Hd4VCbEMVE",
 
 
