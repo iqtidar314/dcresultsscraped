@@ -1,7 +1,6 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-
 const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public'), {
@@ -89,7 +88,11 @@ app.post('/get-result', (req, res) => {
    });
 });
 });
-
+// Serve the sitemap.xml with correct content-type
+app.get('/sitemap.xml', (req, res) => {
+    res.setHeader('Content-Type', 'application/xml');
+    res.sendFile(path.join(__dirname, 'sitemap.xml'));
+  });
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

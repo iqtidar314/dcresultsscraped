@@ -19,4 +19,4 @@ Allow: /
 User-agent: AdsBot-Google-Mobile
 Allow: /
 
-Sitemap: https://your-subdomain.onrender.com/sitemap.xml
+Sitemap: https://dcresultsscraped.onrender.com/sitemap.xml
