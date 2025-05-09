@@ -1,14 +1,2 @@
-# Ignore everything in the main folder
-/*
-
-# Allow subfolders
-!*/
-
-# Exclude public files (HTML, CSS, and JS files)
-!*.html
-!*.css
-!*.js
-
-# Additional ignored items
 node_modules/
 .env
